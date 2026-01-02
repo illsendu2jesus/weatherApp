@@ -52,7 +52,7 @@ function handleWeather(data,address){
         'precipprob':'',
         'temp':''
     }
-    /console.log(data)
+    console.log(data)
     for(let key in dict){
         //console.log(data[key])
         dict[key] = data[key];
@@ -151,12 +151,12 @@ function displayWeather(data,icon){
 
     for(let key in data){
         let field = document.createElement('p');
+        console.log(data[key])
         if(key=='precipprob'){
             field.textContent = `Chance of Rainfall: ${data[key]}%`
         }
-        //
+        
         else if(key=='temp'){
-            
             field.textContent = handleTemperatureOnFetch(data[key]);
             field.classList.add('temp');
         }
